@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F4E1BD"
+    android:padding="16dp">
+
+    <!-- Farmer Info Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:gravity="center_vertical">
+
+        <!-- Farmer Profile Picture -->
+        <ImageView
+            android:id="@+id/imageProfile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/user"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Profile Image" />
+
+        <!-- Farmer Name and Location -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textFarmerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Farmer Name"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location: Village, State"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Product Image -->
+    <ImageView
+        android:id="@+id/imageProduct"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Product Image" />
+
+    <!-- Product Details -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp">
+
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/textProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product: Wheat Seeds"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <!-- Product Category -->
+        <TextView
+            android:id="@+id/textProductCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category: Seeds"
+            android:textSize="12sp" />
+
+        <!-- Product Price -->
+        <TextView
+            android:id="@+id/textProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price: ₹500 per kg"
+            android:textSize="12sp" />
+
+        <!-- Product Availability -->
+        <TextView
+            android:id="@+id/textProductAvailability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Availability: In Stock"
+            android:textSize="12sp" />
+
+        <!-- Product Description -->
+        <TextView
+            android:id="@+id/textProductDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description: High-quality wheat seeds suitable for all seasons."
+            android:textSize="12sp"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/buttonContactFarmer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Contact Farmer"
+        android:drawableStart="@drawable/baseline_add_ic_call_24"
+        android:drawableTint="@android:color/white"
+        android:drawablePadding="8dp"
+        android:backgroundTint="#F0A52E"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:layout_alignParentBottom="true" />
+
+    <!-- Sliding Panel -->
+    <include
+        layout="@layout/sliding_panel_contact_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <!-- Add this Button below the Contact Farmer Button -->
+    <Button
+        android:id="@+id/buttonBuy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Buy Now"
+        android:drawableStart="@drawable/baseline_shopping_cart_24"
+        android:drawableTint="@android:color/black"
+    android:drawablePadding="8dp"
+    android:backgroundTint="#4CAF50"
+    android:textColor="#FFFFFF"
+    android:textSize="14sp"
+    android:padding="8dp" />
+
+</LinearLayout>

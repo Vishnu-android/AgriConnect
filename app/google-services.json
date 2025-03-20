@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "170923414431",
+    "project_id": "agroconnect-dcbc4",
+    "storage_bucket": "agroconnect-dcbc4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170923414431:android:54669ec58047edcd38e3aa",
+        "android_client_info": {
+          "package_name": "com.example.agriconnect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUrZQQDYTV5qxEePkWIQapJKw4staV2CM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170923414431:android:3134ab0b96cc49fa38e3aa",
+        "android_client_info": {
+          "package_name": "com.example.campusbuddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUrZQQDYTV5qxEePkWIQapJKw4staV2CM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
