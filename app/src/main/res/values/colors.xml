@@ -10,4 +10,6 @@
     <color name="background_light">#F5F5F5</color>
     <color name="black">#0D0C0C</color>
     <color name="color_purple">#0D0C0C</color>
+    <color name="gray">#3C3C3C</color>
+
 </resources>

@@ -9,126 +9,374 @@
     android:background="@drawable/gradient_bg"
     tools:context=".SignUpActivity">
 
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Back to Login"
+        android:src="@drawable/ic_arrow_back"
+        android:tint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!-- Profile Image -->
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/user"
-        app:civ_border_color="#ffffff"
-        app:civ_border_width="3dp"
+        app:civ_border_color="#80FFFFFF"
+        app:civ_border_width="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Form Container -->
+    <!-- Change Photo Text -->
+    <TextView
+        android:id="@+id/change_photo_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Add Photo"
+        android:textColor="#E0E0E0"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_image" />
+
+    <!-- Name Field -->
     <LinearLayout
+        android:id="@+id/name_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/profile_image"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/change_photo_text">
 
-        <!-- Name -->
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_person"
+            android:contentDescription="Person Icon"
+            android:tint="#FFFFFF" />
+
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="@null"
             android:hint="Full Name"
             android:inputType="textPersonName"
-            android:padding="12dp"
-            android:background="@drawable/edittext_bg"
-            android:textColor="@android:color/black"
-            android:textColorHint="#666666"
-            android:layout_marginBottom="12dp" />
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E0E0E0"
+            android:importantForAutofill="yes"
+            android:autofillHints="name" />
+    </LinearLayout>
 
-        <!-- Email -->
+    <!-- Divider -->
+    <View
+        android:id="@+id/name_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="#80FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_container" />
+
+    <!-- Email Field -->
+    <LinearLayout
+        android:id="@+id/email_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_divider">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_email"
+            android:contentDescription="Email Icon"
+            android:tint="#FFFFFF" />
+
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="@null"
             android:hint="Email Address"
             android:inputType="textEmailAddress"
-            android:padding="12dp"
-            android:background="@drawable/edittext_bg"
-            android:textColor="@android:color/black"
-            android:textColorHint="#666666"
-            android:layout_marginBottom="12dp" />
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E0E0E0"
+            android:importantForAutofill="yes"
+            android:autofillHints="emailAddress" />
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/email_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="#80FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_container" />
+
+    <!-- Phone Field -->
+    <LinearLayout
+        android:id="@+id/phone_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_divider">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_phone"
+            android:contentDescription="Phone Icon"
+            android:tint="#FFFFFF" />
+
         <EditText
             android:id="@+id/contact"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="@null"
             android:hint="Phone Number"
-            android:inputType="number"
-            android:padding="12dp"
-            android:background="@drawable/edittext_bg"
-            android:textColor="@android:color/black"
-            android:textColorHint="#666666"
-            android:layout_marginBottom="12dp" />
+            android:inputType="phone"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E0E0E0"
+            android:importantForAutofill="yes"
+            android:autofillHints="phone" />
+    </LinearLayout>
 
-        <!-- Password -->
+    <!-- Divider -->
+    <View
+        android:id="@+id/phone_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="#80FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_container" />
+
+    <!-- Password Field -->
+    <LinearLayout
+        android:id="@+id/password_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_divider">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_lock"
+            android:contentDescription="Password Icon"
+            android:tint="#FFFFFF" />
+
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="@null"
             android:hint="Password"
             android:inputType="textPassword"
-            android:padding="12dp"
-            android:background="@drawable/edittext_bg"
-            android:textColor="@android:color/black"
-            android:textColorHint="#666666"
-            android:layout_marginBottom="12dp" />
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E0E0E0"
+            android:importantForAutofill="yes"
+            android:autofillHints="password" />
+    </LinearLayout>
 
-        <!-- UPI ID (Hidden by Default) -->
+    <!-- Divider -->
+    <View
+        android:id="@+id/password_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="#80FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_container" />
+
+    <!-- UPI ID Field (Hidden by Default) -->
+    <LinearLayout
+        android:id="@+id/upi_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_divider">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_payment"
+            android:contentDescription="UPI Icon"
+            android:tint="#FFFFFF" />
+
         <EditText
             android:id="@+id/upiId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="@null"
             android:hint="UPI ID"
-            android:visibility="gone"
-            android:padding="12dp"
-            android:background="@drawable/edittext_bg"
-            android:textColor="@android:color/black"
-            android:textColorHint="#666666"
-            android:layout_marginBottom="12dp" />
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E0E0E0" />
+    </LinearLayout>
 
-        <!-- Bank Account Number (Hidden by Default) -->
+    <!-- Divider for UPI -->
+    <View
+        android:id="@+id/upi_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="#80FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upi_container" />
+
+    <!-- Bank Account Field (Hidden by Default) -->
+    <LinearLayout
+        android:id="@+id/bank_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upi_divider">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_account_balance"
+            android:contentDescription="Bank Icon"
+            android:tint="#FFFFFF" />
+
         <EditText
             android:id="@+id/bankAccountNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="@null"
             android:hint="Bank Account Number"
-            android:visibility="gone"
-            android:padding="12dp"
-            android:background="@drawable/edittext_bg"
-            android:textColor="@android:color/black"
-            android:textColorHint="#666666"
-            android:layout_marginBottom="24dp" />
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E0E0E0" />
+    </LinearLayout>
 
-        <!-- Sign Up Button -->
-        <Button
-            android:id="@+id/signupbtn"
-            android:layout_width="match_parent"
+    <!-- Divider for Bank -->
+    <View
+        android:id="@+id/bank_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="#80FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bank_container" />
+
+    <!-- Sign Up Button -->
+    <Button
+        android:id="@+id/signupbtn"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="SIGN UP"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:background="@drawable/minimal_button_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_divider" />
+
+    <!-- Log In Text -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signupbtn">
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:background="@drawable/button_bg"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
+            android:text="Already have an account? "
+            android:textColor="#E0E0E0"
+            android:textSize="14sp" />
 
-        <!-- Log In Text -->
         <TextView
             android:id="@+id/log_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Already have an account? Log In"
-            android:textColor="#081D1D"
+            android:text="Log In"
+            android:textColor="#FFFFFF"
             android:textSize="14sp"
             android:textStyle="bold" />
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
