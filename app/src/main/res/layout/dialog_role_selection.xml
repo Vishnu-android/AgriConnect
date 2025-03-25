@@ -3,31 +3,39 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="12dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select Your Role"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:text="Select Role"
+        android:textSize="16sp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="12dp" />
 
-    <Button
-        android:id="@+id/btn_buyer"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buyer"
-        android:background="@drawable/button_bg"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="8dp" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_seller"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Seller"
-        android:background="@drawable/button_bg"
-        android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/btn_buyer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:drawableStart="@drawable/ic_buyer"
+            android:drawablePadding="8dp"
+            android:text="Buyer" />
+
+        <Button
+            android:id="@+id/btn_seller"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:drawableStart="@drawable/ic_seller"
+            android:drawablePadding="8dp"
+            android:text="Seller" />
+    </LinearLayout>
 </LinearLayout>
