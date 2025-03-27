@@ -3,18 +3,17 @@
     <item
         android:id="@+id/navHome"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="Home" />
+        android:title="@string/menu_home" />
     <item
         android:id="@+id/navSearch"
         android:icon="@drawable/baseline_search_24"
-        android:title="Search" />
+        android:title="@string/menu_search" />
     <item
         android:id="@+id/navCart"
         android:icon="@drawable/baseline_shopping_cart_24"
-        android:title="MyCart" />
+        android:title="@string/menu_cart" />
     <item
         android:id="@+id/navBuyerProfile"
         android:icon="@drawable/user"
-        android:title="Profile" />
-
+        android:title="@string/menu_profile" />
 </menu>

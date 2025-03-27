@@ -1,79 +1,88 @@
 package com.example.campusbuddy.viewmodels
 
+import android.app.Application
+import android.content.Context
+import android.util.Log
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.campusbuddy.Models.CartItem
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
-class CartViewModel : ViewModel() {
-    // LiveData to hold the list of cart items
+class CartViewModel(application: Application) : AndroidViewModel(application) {
+
     private val _cartItems = MutableLiveData<MutableList<CartItem>>()
     val cartItems: MutableLiveData<MutableList<CartItem>> get() = _cartItems
 
+    private val sharedPreferences = application.getSharedPreferences("CART_PREFERENCES", Context.MODE_PRIVATE)
+    private val gson = Gson()
+
     init {
-        _cartItems.value = mutableListOf()
+        _cartItems.value = loadCartItems()
     }
 
-    /**
-     * Add a product to the cart.
-     * If the product already exists in the cart, increase its quantity.
-     */
     fun addItemToCart(cartItem: CartItem) {
         val currentCart = _cartItems.value ?: mutableListOf()
-
-        // Check if the product is already in the cart
-        val existingItem = currentCart.find { it.productId == cartItem.productId }
+        val existingItem = currentCart.find { it.productId == cartItem.productId && cartItem.productId != null }
 
         if (existingItem != null) {
-            // If the product exists, increase its quantity
             existingItem.quantity += cartItem.quantity
         } else {
-            // If the product doesn't exist, add it to the cart
             currentCart.add(cartItem)
         }
 
-        _cartItems.value = currentCart
+        _cartItems.postValue(currentCart)
+        saveCartItems(currentCart)
     }
 
-    /**
-     * Remove a product from the cart.
-     */
-    fun removeFromCart(cartItem: CartItem) { // Change parameter type to CartItem
+    fun removeFromCart(cartItem: CartItem) {
         val currentCart = _cartItems.value ?: mutableListOf()
-        currentCart.remove(cartItem) // Remove the CartItem object
-        _cartItems.value = currentCart
+        currentCart.remove(cartItem)
+        _cartItems.postValue(currentCart)
+        saveCartItems(currentCart)
     }
 
-    /**
-     * Update the quantity of a product in the cart.
-     */
     fun updateProductQuantity(productId: String, newQuantity: Int) {
         val currentCart = _cartItems.value ?: mutableListOf()
-
-        // Find the product in the cart
         val cartItem = currentCart.find { it.productId == productId }
 
         if (cartItem != null) {
-            // Update the product's quantity
             cartItem.quantity = newQuantity
-
-            // If the quantity is 0, remove the product from the cart
             if (newQuantity <= 0) {
                 currentCart.remove(cartItem)
             }
-
-            _cartItems.value = currentCart
+            _cartItems.postValue(currentCart)
+            saveCartItems(currentCart)
         }
     }
 
-    /**
-     * Clear the cart.
-     */
     fun clearCart() {
-        _cartItems.value = mutableListOf()
+        _cartItems.postValue(mutableListOf())
+        saveCartItems(mutableListOf())
     }
 
-    /**
-     * Get the total price of all items in the cart.
-     */
+    private fun saveCartItems(cartItems: List<CartItem>) {
+        val json = gson.toJson(cartItems)
+        sharedPreferences.edit().putString("CART_ITEMS", json).apply()
+        Log.d("CartViewModel", "Cart items saved: $json")
+    }
 
+    private fun loadCartItems(): MutableList<CartItem> {
+        val json = sharedPreferences.getString("CART_ITEMS", null)
+        return if (!json.isNullOrEmpty()) {
+            try {
+                Log.d("CartViewModel", "JSON from SharedPreferences: $json")
+                val type = object : TypeToken<MutableList<CartItem>>() {}.type
+                val items: MutableList<CartItem> = gson.fromJson(json, type) // Explicitly specify the type
+                Log.d("CartViewModel", "Cart items loaded: ${items.size} items")
+                items
+            } catch (e: Exception) {
+                Log.e("CartViewModel", "Error loading cart items: ${e.message}", e)
+                mutableListOf()
+            }
+        } else {
+            Log.d("CartViewModel", "No cart items found in SharedPreferences")
+            mutableListOf()
+        }
+    }
 }

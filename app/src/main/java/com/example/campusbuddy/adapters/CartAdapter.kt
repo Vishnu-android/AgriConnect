@@ -1,5 +1,8 @@
 package com.example.campusbuddy.adapters
 
+
+
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,12 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.campusbuddy.Models.CartItem
 import com.example.campusbuddy.R
 import com.example.campusbuddy.databinding.CartItemBinding
-import com.example.campusbuddy.viewmodels.CartViewModel
 import com.squareup.picasso.Picasso
 
+
+
 class CartAdapter(
-    private var cartItems: MutableList<CartItem>, // Use CartItem instead of Product
-    private val cartViewModel: CartViewModel // Pass CartViewModel to the adapter
+    private var cartItems: MutableList<CartItem>,
+    private val onRemoveFromCart: (CartItem) -> Unit // Lambda function for removal
 ) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
     inner class CartViewHolder(val binding: CartItemBinding) : RecyclerView.ViewHolder(binding.root)
@@ -28,7 +32,7 @@ class CartAdapter(
 
         // Bind data to views
         holder.binding.textProductName.text = cartItem.productName
-        holder.binding.textProductPrice.text = "Price: $${cartItem.productPrice}"
+        holder.binding.textProductPrice.text = "Price: ${cartItem.productPrice}"
         holder.binding.textQuantity.text = "Quantity: ${cartItem.quantity}"
 
         if (!cartItem.productImageUrl.isNullOrEmpty()) {
@@ -43,9 +47,7 @@ class CartAdapter(
 
         // Handle Remove from Cart Button Click
         holder.binding.buttonRemoveCart.setOnClickListener {
-            // Remove the item from the cart
-            cartViewModel.removeFromCart(cartItem)
-            // Show a Toast message
+            onRemoveFromCart(cartItem)
             Toast.makeText(
                 holder.itemView.context,
                 "${cartItem.productName} removed from cart!",
@@ -58,8 +60,8 @@ class CartAdapter(
         return cartItems.size
     }
 
-    // Function to update the cart items
-    fun updateCartItems(newCartItems: MutableList<CartItem>) { // Keep parameter type as CartItem
+    fun updateCartItems(newCartItems: MutableList<CartItem>) {
+        Log.d("CartAdapter", "Updating cart items: ${newCartItems.size} items")
         cartItems.clear()
         cartItems.addAll(newCartItems)
         notifyDataSetChanged()

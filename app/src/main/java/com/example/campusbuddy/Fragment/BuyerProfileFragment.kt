@@ -1,7 +1,6 @@
 package com.example.campusbuddy.Fragment
 
 
-import User
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.campusbuddy.BuyerOrderActivity
+import com.example.campusbuddy.Models.User
 import com.example.campusbuddy.SignUpActivity
 import com.example.campusbuddy.databinding.FragmentBuyerProfileBinding
 import com.example.campusbuddy.utils.USER_NODE
@@ -45,11 +46,15 @@ class BuyerProfileFragment : Fragment() {
             startActivity(intent)
             activity?.finish()
         }
-
+        binding.viewAllOrdersButton.setOnClickListener {
+            startActivity(Intent(activity, BuyerOrderActivity::class.java))
+        }
 
         // Fetch and display user details
         fetchUserDetails()
     }
+
+
 
     private fun fetchUserDetails() {
         val currentUser = auth.currentUser

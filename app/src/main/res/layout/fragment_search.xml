@@ -23,7 +23,7 @@
             android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Search for users..."
+            android:hint="@string/search_users_hint"
             android:inputType="text"
             android:paddingStart="16dp"
             android:paddingEnd="50dp"

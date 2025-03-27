@@ -1,10 +1,10 @@
 package com.example.campusbuddy.adapters
 
 
-import User
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +15,7 @@ import com.example.campusbuddy.R
 import com.example.campusbuddy.databinding.PostRvBinding
 import com.example.campusbuddy.utils.USER_NODE
 import com.example.campusbuddy.Models.Post
+import com.example.campusbuddy.Models.User
 import com.example.campusbuddy.PostDetailActivity
 import com.example.campusbuddy.viewmodels.CartViewModel
 import com.google.firebase.firestore.ktx.firestore
@@ -26,7 +27,7 @@ class PostAdapter(
     var context: Context,
     var postList: ArrayList<Post>,
     var followedUsers: Set<String>,
-    private val cartViewModel: CartViewModel // Add CartViewModel
+    private val cartViewModel: CartViewModel
 ) : RecyclerView.Adapter<PostAdapter.MyHolder>() {
 
     inner class MyHolder(var binding: PostRvBinding) : RecyclerView.ViewHolder(binding.root)
@@ -42,6 +43,9 @@ class PostAdapter(
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         val post = postList[position]
+
+        Log.d("PostAdapter", "Post image URL: ${post.imageUrl}")
+
 
         // Highlight posts from followed users
         if (followedUsers.contains(post.userId)) {
@@ -82,21 +86,20 @@ class PostAdapter(
 
         // Set Product Details
         holder.binding.textProductName.text = "Product: ${post.productName ?: "N/A"}"
-        holder.binding.textProductCategory.text = "Category: ${post.productCategory ?: "N/A"}"
+        holder.binding.textProductCategory.text = "Category: ${post.productCategory ?: "Uncategorized"}"
         holder.binding.textProductPrice.text = "Price: ${post.productPrice ?: "N/A"}"
         holder.binding.textProductAvailability.text = "Availability: ${post.productAvailability ?: "N/A"}"
         holder.binding.textProductDescription.text = "Description: ${post.productDescription ?: "N/A"}"
 
-
+        // Handle item click to open PostDetailActivity
         holder.itemView.setOnClickListener {
             val intent = Intent(context, PostDetailActivity::class.java)
-            intent.putExtra("POST", post) // Pass the post data to the detail activity
+            intent.putExtra("POST", post)
             context.startActivity(intent)
         }
 
         // Handle Add to Cart Button Click
         holder.binding.buttonAddCart.setOnClickListener {
-            // Add the product to the cart using CartViewModel
             cartViewModel.addItemToCart(
                 CartItem(
                     productId = post.postId ?: "",
@@ -104,10 +107,15 @@ class PostAdapter(
                     productPrice = post.productPrice ?: "N/A",
                     productImageUrl = post.imageUrl
                 )
-
             )
-            Toast.makeText(context, "${post.productName ?: "Product"} added to cart!", Toast.LENGTH_SHORT // Duration
-            ).show()
+            Toast.makeText(context, "${post.productName ?: "Product"} added to cart!", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    // Function to update the list of posts
+    fun updateList(newList: List<Post>) {
+        postList.clear()
+        postList.addAll(newList)
+        notifyDataSetChanged() // Notify the adapter of data changes
     }
 }

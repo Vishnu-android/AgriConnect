@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.play.services.cast.tv)
     implementation(libs.play.services.analytics.impl)
     implementation(libs.firebase.messaging)
+    implementation(libs.androidx.swiperefreshlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -78,6 +79,15 @@ dependencies {
     implementation ("com.cloudinary:cloudinary-android:3.0.2")
 
     implementation ("com.google.firebase:firebase-messaging:23.1.0")
+
+    implementation ("androidx.viewpager2:viewpager2:1.0.0")
+    implementation ("me.relex:circleindicator:2.1.6")
+
+    implementation ("com.google.android.gms:play-services-location:21.0.1")
+    implementation ("com.google.android.gms:play-services-maps:18.2.0")
+    implementation ("com.google.code.gson:gson:2.10.1")
+
+
 
 
 }

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <string name="order_details_title">ऑर्डर तपशील</string>
+        <string name="shipping_address_title">शिपिंग पत्ता</string>
+        <string name="full_name_hint">पूर्ण नाव</string>
+        <string name="phone_hint">फोन नंबर</string>
+        <string name="address_hint">पूर्ण पत्ता</string>
+        <string name="city_hint">शहर</string>
+        <string name="state_hint">राज्य</string>
+        <string name="pincode_hint">पिन कोड</string>
+        <string name="order_notes_title">ऑर्डर नोट्स (पर्यायी)</string>
+        <string name="special_instructions_hint">डिलिवरीसाठी विशेष सूचना</string>
+
+    <string name="add_product_title">उत्पादन जोडा</string>
+    <string name="select_product_image">उत्पादन प्रतिमा निवडा</string>
+    <string name="select_image_button">प्रतिमा निवडा</string>
+    <string name="product_name_label">उत्पादनाचे नाव</string>
+    <string name="product_name_hint">उत्पादनाचे नाव प्रविष्ट करा</string>
+    <string name="product_category_label">उत्पादन श्रेणी</string>
+    <string name="product_category_hint">उत्पादन श्रेणी प्रविष्ट करा</string>
+    <string name="product_price_label">उत्पादन किंमत</string>
+    <string name="product_price_hint">उत्पादन किंमत प्रविष्ट करा</string>
+    <string name="product_availability_hint">उत्पादन उपलब्धता प्रविष्ट करा</string>
+    <string name="product_description_hint">उत्पादन वर्णन प्रविष्ट करा</string>
+    <string name="add_product_button">उत्पादन जोडा</string>
+    <string name="cancel_button">रद्द करें</string>
+
+
+        <string name="product_image_desc">उत्पादन प्रतिमा</string>
+        <string name="availability_label">उपलब्धता</string>
+
+        <string name="email_label">ईमेल</string>
+        <string name="logout_icon_desc">लॉगआउट चिन्ह</string>
+        <string name="products_label">उत्पादने</string>
+        <string name="total_sales_label">एकूण विक्री</string>
+        <string name="ratings_label">रेटिंग</string>
+        <string name="farm_name_label">शेताचे नाव</string>
+        <string name="location_label">स्थान: शहर, राज्य</string>
+        <string name="contact_label">संपर्क: +91 1234567890</string>
+        <string name="upi_id_label">UPI ID: उपलब्ध नाही</string>
+        <string name="bank_account_label">बँक खाते: उपलब्ध नाही</string>
+        <string name="view_orders_button">ऑर्डर पहा</string>
+        <string name="edit_profile_button">प्रोफाइल संपादित करा</string>
+
+
+        <string name="profile_title">तुमचे प्रोफाइल</string>
+        <string name="orders_label">ऑर्डर</string>
+        <string name="volume_label">प्रमाण</string>
+        <string name="member_since_label">सदस्यता तारीख</string>
+        <string name="contact_info_title">संपर्क माहिती</string>
+        <string name="recent_orders_title">अलीकडील ऑर्डर</string>
+        <string name="view_all_orders">सर्व ऑर्डर पहा</string>
+        <string name="contact_button">संपर्क साधा</string>
+        <string name="place_order_button">ऑर्डर द्या</string>
+
+
+        <string name="sample_product_name">ऑर्गेनिक ताजे टोमॅटो</string>
+        <string name="sample_variety">स्थानिक प्रकार</string>
+        <string name="quantity_label">प्रमाण: 2 किलो</string>
+        <string name="sample_price">₹75/किलो</string>
+        <string name="remove_item_desc">आयटम काढा</string>
+
+    <string name="follow_button_text">फॉलो करा</string>
+    <string name="following_button_text">फॉलो केले</string>
+    <string name="unfollow_button_text">अनफॉलो</string>
+    <string name="search_users_hint">वापरकर्ते शोधा...</string>
+
+        <string name="order_summary_title">ऑर्डर सारांश</string>
+        <string name="product_details">उत्पादन तपशील</string>
+        <string name="fresh_organic_tomatoes">ताजे ऑर्गेनिक टोमॅटो</string>
+        <string name="category">वर्ग</string>
+        <string name="quantity">प्रमाण</string>
+        <string name="quantity_example">प्रमाण: 5 किलो</string>
+        <string name="delivery_address">डिलिव्हरी पत्ता</string>
+        <string name="change">बदला</string>
+        <string name="customer_name_example">जॉन डो</string>
+        <string name="customer_address_example">123 फार्म रोड, ग्रीन विलेज, ऑर्गेनिक स्टेट, 567890</string>
+        <string name="phone_example">फोन: +91 9876543210</string>
+        <string name="price_details">किंमत तपशील</string>
+        <string name="product_price">उत्पादनाची किंमत</string>
+        <string name="delivery_fee">डिलिव्हरी शुल्क</string>
+        <string name="total_amount">एकूण रक्कम</string>
+        <string name="seller_information">विक्रेता माहिती</string>
+        <string name="farmer_name_example">शेतकऱ्याचे नाव</string>
+        <string name="farmer_location_example">स्थान: ग्रीन विलेज</string>
+        <string name="proceed_to_payment">पेमेंट करा</string>
+
+        <string name="product_details_title">उत्पादन तपशील</string>
+        <string name="organic_red_apples">ऑर्गेनिक लाल सफरचंद</string>
+        <string name="category_fruits">वर्ग: फळे</string>
+        <string name="price_per_kg">₹80 प्रति किलो</string>
+        <string name="in_stock">स्टॉकमध्ये: 50 किलो</string>
+        <string name="description">वर्णन</string>
+        <string name="product_description">आमच्या शेतातील ताजे आणि नैसर्गिक पद्धतीने वाढवलेली लाल सफरचंद. कीटकनाशके वापरली नाहीत. गोड आणि रसाळ, कच्चे खाण्यासाठी किंवा स्वयंपाकासाठी परिपूर्ण.</string>
+        <string name="farmer_details">शेतकऱ्याचे तपशील</string>
+        <string name="farmer_name">जॉन डो</string>
+        <string name="location">स्थान: नाशिक, महाराष्ट्र</string>
+        <string name="harvest_date">कापणीची तारीख: 15 मार्च 2025</string>
+        <string name="farming_method">शेती पद्धत: नैसर्गिक</string>
+        <string name="delivery_options">डिलिव्हरी: 50 किमी अंतर्गत उपलब्ध</string>
+        <string name="quality_assurance">गुणवत्ता हमी</string>
+        <string name="organic">नैसर्गिक</string>
+        <string name="fresh">ताजे</string>
+        <string name="local">स्थानिक</string>
+        <string name="contact_farmer">शेतकऱ्याशी संपर्क साधा</string>
+        <string name="call">कॉल</string>
+        <string name="message">संदेश</string>
+        <string name="email">ईमेल</string>
+        <string name="contact">संपर्क</string>
+        <string name="buy_now">आत्ता विकत घ्या</string>
+
+
+        <string name="product_category_vegetables">भाज्या</string>
+        <string name="product_name_tomatoes">ताजे नैसर्गिक टोमॅटो</string>
+        <string name="add_to_cart">कार्टमध्ये जोडा</string>
+
+
+        <string name="menu_home">होम</string>
+        <string name="menu_add">जोडा</string>
+        <string name="menu_search">शोधा</string>
+        <string name="menu_profile">प्रोफाइल</string>
+
+    <string name="menu_my_posts">माझ्या पोस्ट</string>
+    <string name="menu_add_product">उत्पादन जोडा</string>
+
+        <string name="menu_cart">माझी कार्ट</string>
+    <string name="menu_my_order">My Order</string>
+
+
+        <string name="seller_name">राजेश पाटील</string>
+        <string name="seller_farm_name">ग्रीन व्हॅली ऑर्गेनिक फार्म</string>
+
+        <!-- Contact Information -->
+        <string name="additional_information">संपर्क माहिती</string>
+        <string name="seller_phone">+91 98765 43210</string>
+        <string name="seller_email">greenvalley@example.com</string>
+        <string name="seller_upiId">rajesh.patel@upi</string>
+        <string name="seller_account_number">AC1234567890 (स्टेट बँक)</string>
+
+        <!-- Farm Information -->
+    <string name="order_id_format">ਆਰਡਰ ਆਈਡੀ: %s</string>
+    <string name="price_format">किंमत: ₹%.2f</string>  <!-- Example: किंमत: ₹100.00 -->
+    <string name="quantity_format">प्रमाण: %d</string>  <!-- Example: प्रमाण: 2 -->
+        <string name="about_farm">आमच्या शेताबद्दल</string>
+        <string name="farm_description">आम्ही एक कौटुंबिक जैविक शेत आहोत जे हंगामी भाज्या आणि फळांमध्ये तज्ज्ञ आहे. 20 वर्षांपेक्षा जास्त अनुभवासह, आम्ही आमच्या ग्राहकांना थेट ताजे, रासायनिक मुक्त उत्पादने पुरवण्यासाठी शाश्वत शेती पद्धतींचा सराव करतो. आमचे शेत महाराष्ट्राच्या सुपीक जमिनीवर आहे, जिथे आम्ही वर्षभर 50 पेक्षा जास्त प्रकारची पिके घेतो.</string>
+    <!-- Action Buttons -->
+    <string name="edit_profile">प्रोफाइल संपादित करा</string>
+    <string name="logout">लॉगआउट</string>
+    <string name="add_product">उत्पादन जोडा</string>
+    <string name="add_video">व्हिडिओ जोडा</string>
+    <string name="no_posts_found">तुम्ही अजून काही पोस्ट केलेले नाही</string>
+    <string name="loading_posts">तुमच्या पोस्ट लोड होत आहेत...</string>
+    <string name="No_orders_found">ऑर्डर सापडले नाही</string>
+    <string name="No_products_uploaded">अजून कोणतेही उत्पादन अपलोड केलेले नाही</string>
+</resources>

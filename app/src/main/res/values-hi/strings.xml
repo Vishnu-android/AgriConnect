@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Existing checkout strings -->
+    <string name="order_details_title">आदेश विवरण</string>
+    <string name="shipping_address_title">शिपिंग पता</string>
+    <string name="full_name_hint">पूरा नाम</string>
+    <string name="phone_hint">फोन नंबर</string>
+    <string name="address_hint">पूरा पता</string>
+    <string name="city_hint">शहर</string>
+    <string name="state_hint">राज्य</string>
+    <string name="pincode_hint">पिन कोड</string>
+    <string name="order_notes_title">आदेश नोट्स (वैकल्पिक)</string>
+    <string name="special_instructions_hint">डिलीवरी के लिए विशेष निर्देश</string>
+
+    <!-- Add Product Activity -->
+    <string name="add_product_title">उत्पाद जोड़ें</string>
+    <string name="select_product_image">उत्पाद छवि चुनें</string>
+    <string name="select_image_button">छवि चुनें</string>
+    <string name="product_name_label">उत्पाद का नाम</string>
+    <string name="product_name_hint">उत्पाद का नाम दर्ज करें</string>
+    <string name="product_category_label">उत्पाद श्रेणी</string>
+    <string name="product_category_hint">उत्पाद श्रेणी दर्ज करें</string>
+    <string name="product_price_label">उत्पाद मूल्य</string>
+    <string name="product_price_hint">उत्पाद मूल्य दर्ज करें</string>
+    <string name="product_availability_hint">उत्पाद उपलब्धता दर्ज करें</string>
+    <string name="product_description_hint">उत्पाद विवरण दर्ज करें</string>
+    <string name="add_product_button">उत्पाद जोड़ें</string>
+    <string name="cancel_button">रद्द करें</string>
+
+        <string name="product_image_desc">उत्पाद छवि</string>
+        <string name="availability_label">उपलब्धता</string>
+
+        <string name="email_label">ईमेल</string>
+        <string name="logout_icon_desc">लॉगआउट आइकन</string>
+        <string name="products_label">उत्पाद</string>
+        <string name="total_sales_label">कुल बिक्री</string>
+        <string name="ratings_label">रेटिंग</string>
+        <string name="farm_name_label">फार्म का नाम</string>
+        <string name="location_label">स्थान: शहर, राज्य</string>
+        <string name="contact_label">संपर्क: +91 1234567890</string>
+        <string name="upi_id_label">यूपीआई आईडी: उपलब्ध नहीं</string>
+        <string name="bank_account_label">बैंक खाता: उपलब्ध नहीं</string>
+        <string name="view_orders_button">आदेश देखें</string>
+        <string name="edit_profile_button">प्रोफ़ाइल संपादित करें</string>
+
+
+        <string name="profile_title">आपका प्रोफाइल</string>
+        <string name="orders_label">आदेश</string>
+        <string name="volume_label">मात्रा</string>
+        <string name="member_since_label">सदस्यता तिथि</string>
+        <string name="contact_info_title">संपर्क जानकारी</string>
+        <string name="recent_orders_title">हाल के आदेश</string>
+        <string name="view_all_orders">सभी आदेश देखें</string>
+        <string name="contact_button">संपर्क करें</string>
+        <string name="place_order_button">आदेश दें</string>
+
+
+        <string name="sample_product_name">ऑर्गेनिक ताजे टमाटर</string>
+        <string name="sample_variety">स्थानीय किस्म</string>
+        <string name="quantity_label">मात्रा: 2 किलो</string>
+        <string name="sample_price">₹75/किलो</string>
+        <string name="remove_item_desc">आइटम हटाएं</string>
+
+    <string name="follow_button_text">फॉलो करें</string>
+    <string name="following_button_text">फॉलो किया</string>
+    <string name="unfollow_button_text">अनफॉलो</string>
+    <string name="search_users_hint">उपयोगकर्ताओं को खोजें...</string>
+
+
+        <string name="order_summary_title">आदेश सारांश</string>
+        <string name="product_details">उत्पाद विवरण</string>
+        <string name="fresh_organic_tomatoes">ताजे जैविक टमाटर</string>
+        <string name="category">श्रेणी</string>
+        <string name="quantity">मात्रा</string>
+        <string name="quantity_example">मात्रा: 5 किलो</string>
+        <string name="delivery_address">डिलीवरी पता</string>
+        <string name="change">बदलें</string>
+        <string name="customer_name_example">जॉन डो</string>
+        <string name="customer_address_example">123 फार्म रोड, ग्रीन विलेज, ऑर्गेनिक स्टेट, 567890</string>
+        <string name="phone_example">फोन: +91 9876543210</string>
+        <string name="price_details">मूल्य विवरण</string>
+        <string name="product_price">उत्पाद की कीमत</string>
+        <string name="delivery_fee">डिलीवरी शुल्क</string>
+        <string name="total_amount">कुल राशि</string>
+        <string name="seller_information">विक्रेता जानकारी</string>
+        <string name="farmer_name_example">किसान का नाम</string>
+        <string name="farmer_location_example">स्थान: ग्रीन विलेज</string>
+        <string name="proceed_to_payment">भुगतान करें</string>
+
+
+        <string name="product_details_title">उत्पाद विवरण</string>
+        <string name="organic_red_apples">ऑर्गेनिक लाल सेब</string>
+        <string name="category_fruits">श्रेणी: फल</string>
+        <string name="price_per_kg">₹80 प्रति किलो</string>
+        <string name="in_stock">स्टॉक में: 50 किलो</string>
+        <string name="description">विवरण</string>
+        <string name="product_description">हमारे फार्म से ताजे और जैविक रूप से उगाए गए लाल सेब। कोई कीटनाशक नहीं इस्तेमाल किया गया। मीठे और रसीले, कच्चे खाने या पकाने के लिए बिल्कुल सही।</string>
+        <string name="farmer_details">किसान का विवरण</string>
+        <string name="farmer_name">जॉन डो</string>
+        <string name="location">स्थान: नासिक, महाराष्ट्र</string>
+        <string name="harvest_date">फसल तिथि: 15 मार्च 2025</string>
+        <string name="farming_method">खेती का तरीका: जैविक</string>
+        <string name="delivery_options">डिलीवरी: 50 किमी के दायरे में उपलब्ध</string>
+        <string name="quality_assurance">गुणवत्ता आश्वासन</string>
+        <string name="organic">जैविक</string>
+        <string name="fresh">ताजा</string>
+        <string name="local">स्थानीय</string>
+        <string name="contact_farmer">किसान से संपर्क करें</string>
+        <string name="call">कॉल</string>
+        <string name="message">संदेश</string>
+        <string name="email">ईमेल</string>
+        <string name="contact">संपर्क</string>
+        <string name="buy_now">अभी खरीदें</string>
+
+        <string name="product_category_vegetables">सब्जियां</string>
+        <string name="product_name_tomatoes">ताजे जैविक टमाटर</string>
+        <string name="add_to_cart">कार्ट में जोड़ें</string>
+
+
+        <string name="menu_home">होम</string>
+        <string name="menu_add">जोड़ें</string>
+        <string name="menu_search">खोजें</string>
+        <string name="menu_profile">प्रोफाइल</string>
+
+    <string name="menu_my_posts">मेरी पोस्ट</string>
+    <string name="menu_add_product">उत्पाद जोड़ें</string>
+    <string name="menu_cart">मेरी गाड़ी</string>
+    <string name="menu_my_order">मेरा ऑर्डर</string>
+    <string name="price_format">मूल्य: ₹%.2f</string>  <!-- Example: मूल्य: ₹100.00 -->
+    <string name="quantity_format">मात्रा: %d</string>  <!-- Example: मात्रा: 2 -->
+
+    <string name="order_id_format">ऑर्डर आईडी: %s</string>
+        <string name="seller_name">राजेश पटेल</string>
+        <string name="seller_farm_name">ग्रीन वैली ऑर्गेनिक फार्म</string>
+
+        <!-- Contact Information -->
+        <string name="additional_information">संपर्क जानकारी</string>
+        <string name="seller_phone">+91 98765 43210</string>
+        <string name="seller_email">greenvalley@example.com</string>
+        <string name="seller_upiId">rajesh.patel@upi</string>
+        <string name="seller_account_number">AC1234567890 (स्टेट बैंक)</string>
+    <string name="No_orders_found">कोई ऑर्डर नहीं मिला</string>
+    <string name="No_products_uploaded">अभी तक कोई उत्पाद अपलोड नहीं किया गया</string>
+
+        <!-- Farm Information -->
+        <string name="about_farm">हमारे फार्म के बारे में</string>
+        <string name="farm_description">हम एक परिवार द्वारा संचालित जैविक खेत हैं जो मौसमी सब्जियों और फलों में विशेषज्ञता रखते हैं। 20 वर्षों से अधिक के अनुभव के साथ, हम अपने ग्राहकों को सीधे ताजा, रसायन मुक्त उत्पाद देने के लिए टिकाऊ कृषि विधियों का अभ्यास करते हैं। हमारा खेत महाराष्ट्र की उपजाऊ भूमि में स्थित है, जहाँ हम पूरे वर्ष 50 से अधिक प्रकार की फसलें उगाते हैं।</string>
+    <string name="edit_profile">प्रोफ़ाइल संपादित करें</string>
+    <string name="logout">लॉगआउट</string>
+
+    <string name="add_product">उत्पाद जोड़ें</string>
+    <string name="add_video">वीडियो जोड़ें</string>
+    <string name="no_posts_found">आपने अभी तक कुछ भी पोस्ट नहीं किया है</string>
+    <string name="loading_posts">आपकी पोस्ट लोड हो रही हैं...</string>
+</resources>

@@ -1,6 +1,6 @@
 package com.example.campusbuddy.Fragment
 
-import User
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.campusbuddy.HomeActivity
+import com.example.campusbuddy.Models.User
 
 import com.example.campusbuddy.adapters.SearchAdapter
 import com.example.campusbuddy.databinding.FragmentSearchBinding

@@ -54,7 +54,7 @@
             android:layout_marginEnd="12dp"
             android:src="@drawable/ic_email"
             android:contentDescription="Email Icon"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
 
         <EditText
             android:id="@+id/log_email"
@@ -102,7 +102,7 @@
             android:layout_marginEnd="12dp"
             android:src="@drawable/ic_lock"
             android:contentDescription="Password Icon"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
 
         <EditText
             android:id="@+id/log_password"

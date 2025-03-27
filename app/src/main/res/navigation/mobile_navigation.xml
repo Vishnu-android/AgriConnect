@@ -51,4 +51,11 @@
         android:name="com.example.campusbuddy.Fragment.MyCartFragment"
         android:label="fragment_my_cart"
         tools:layout="@layout/fragment_my_cart" />
+
+    <fragment
+        android:id="@+id/navOrders"
+        android:name="com.example.campusbuddy.Fragment.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" />
+
 </navigation>

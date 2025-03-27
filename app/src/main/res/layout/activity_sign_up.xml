@@ -9,19 +9,6 @@
     android:background="@drawable/gradient_bg"
     tools:context=".SignUpActivity">
 
-    <!-- Back Button -->
-    <ImageButton
-        android:id="@+id/back_button"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Back to Login"
-        android:src="@drawable/ic_arrow_back"
-        android:tint="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Profile Image -->
     <de.hdodenhof.circleimageview.CircleImageView
@@ -69,7 +56,7 @@
             android:layout_marginEnd="12dp"
             android:src="@drawable/ic_person"
             android:contentDescription="Person Icon"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
 
         <EditText
             android:id="@+id/name"
@@ -117,7 +104,7 @@
             android:layout_marginEnd="12dp"
             android:src="@drawable/ic_email"
             android:contentDescription="Email Icon"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
 
         <EditText
             android:id="@+id/email"
@@ -165,7 +152,7 @@
             android:layout_marginEnd="12dp"
             android:src="@drawable/ic_phone"
             android:contentDescription="Phone Icon"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
 
         <EditText
             android:id="@+id/contact"
@@ -213,7 +200,7 @@
             android:layout_marginEnd="12dp"
             android:src="@drawable/ic_lock"
             android:contentDescription="Password Icon"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
 
         <EditText
             android:id="@+id/password"
@@ -241,12 +228,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password_container" />
 
-    <!-- UPI ID Field (Hidden by Default) -->
+    <!-- UPI ID Field (Initially Hidden) -->
     <LinearLayout
         android:id="@+id/upi_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:orientation="horizontal"
@@ -262,14 +249,14 @@
             android:layout_marginEnd="12dp"
             android:src="@drawable/ic_payment"
             android:contentDescription="UPI Icon"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
 
         <EditText
             android:id="@+id/upiId"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@null"
-            android:hint="UPI ID"
+            android:hint="UPI ID (e.g. name@upi)"
             android:textSize="16sp"
             android:textColor="#FFFFFF"
             android:textColorHint="#E0E0E0" />
@@ -288,12 +275,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/upi_container" />
 
-    <!-- Bank Account Field (Hidden by Default) -->
+    <!-- Bank Account Field (Initially Hidden) -->
     <LinearLayout
         android:id="@+id/bank_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:orientation="horizontal"
@@ -309,7 +296,9 @@
             android:layout_marginEnd="12dp"
             android:src="@drawable/ic_account_balance"
             android:contentDescription="Bank Icon"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
+
+
 
         <EditText
             android:id="@+id/bankAccountNumber"
@@ -340,7 +329,7 @@
         android:id="@+id/signupbtn"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:text="SIGN UP"
@@ -349,7 +338,7 @@
         android:background="@drawable/minimal_button_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_divider" />
+        app:layout_constraintTop_toBottomOf="@id/bank_divider" />
 
     <!-- Log In Text -->
     <LinearLayout
@@ -376,7 +365,6 @@
             android:textColor="#FFFFFF"
             android:textSize="14sp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

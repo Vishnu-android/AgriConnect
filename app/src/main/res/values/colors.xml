@@ -10,6 +10,14 @@
     <color name="background_light">#F5F5F5</color>
     <color name="black">#0D0C0C</color>
     <color name="color_purple">#0D0C0C</color>
-    <color name="gray">#3C3C3C</color>
-
+    <color name="moss_green">#a4d5a6</color>
+    <color name="sushi">#8bc34b</color>
+    <color name="dark_green">#1B5E20</color>
+    <color name="medium_green">#388E3C</color>
+    <color name="light_green">#81C784</color>
+    <color name="very_light_green">#E8F5E9</color>
+    <color name="dark_gray">#555555</color>
+    <color name="medium_gray">#888888</color>
+    <color name="light_gray">#DDDDDD</color>
+    <color name="accent_orange">#FF6D00</color>
 </resources>

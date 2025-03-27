@@ -1,12 +1,11 @@
 package com.example.campusbuddy.post
 
-
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.widget.EditText
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -16,6 +15,7 @@ import com.cloudinary.android.callback.UploadCallback
 import com.example.campusbuddy.HomeActivity
 import com.example.campusbuddy.Models.Post
 import com.example.campusbuddy.databinding.ActivityPostBinding
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -25,20 +25,24 @@ class PostActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityPostBinding.inflate(layoutInflater) }
     private lateinit var imageView: ImageView
-    private lateinit var productNameEditText: EditText
-    private lateinit var productPriceEditText: EditText
-    private lateinit var productCategoryEditText: EditText
-    private lateinit var productAvailabilityEditText: EditText
-    private lateinit var productDescriptionEditText: EditText
+    private lateinit var productNameEditText: TextInputEditText
+    private lateinit var productPriceEditText: TextInputEditText
+    private lateinit var productCategoryEditText: TextInputEditText
+    private lateinit var productAvailabilityEditText: TextInputEditText
+    private lateinit var productDescriptionEditText: TextInputEditText
+    private lateinit var btnSelectImage: Button
+    private lateinit var btnPost: Button
+    private lateinit var btnCancel: Button
     private var imagePath: Uri? = null
     private var userRole: String? = null
 
+    // Image picker launcher
     private val imagePickerLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             val data: Intent? = result.data
             data?.data?.let { uri ->
                 imagePath = uri
-                Picasso.get().load(uri).into(binding.imageview)
+                Picasso.get().load(uri).into(imageView) // Load the selected image into the ImageView
             }
         }
     }
@@ -47,34 +51,41 @@ class PostActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        // Initialize views
+        imageView = binding.imageView
+        productNameEditText = binding.productNameEditText
+        productPriceEditText = binding.productPriceEditText
+        productCategoryEditText = binding.productCategoryEditText
+        productAvailabilityEditText = binding.productAvailabilityEditText
+        productDescriptionEditText = binding.productDescriptionEditText
+        btnSelectImage = binding.btnSelectImage
+        btnPost = binding.btnPost
+        btnCancel = binding.btnCancel
+
         // Retrieve the role from the intent that started this activity
         userRole = intent.getStringExtra("ROLE") ?: "Seller"
 
+        // Initialize Cloudinary
         initCloudinary()
 
-        binding.btnCancel.setOnClickListener {
-            // Pass the role back when canceling too
-            val intent = Intent(this@PostActivity, HomeActivity::class.java)
-            intent.putExtra("ROLE", userRole)
-            startActivity(intent)
-            finish()
+        // Set up click listeners
+        btnSelectImage.setOnClickListener {
+            openImagePicker()
         }
 
-        binding.btnPost.setOnClickListener {
+        btnPost.setOnClickListener {
             if (imagePath != null) {
-                val productName = binding.productNameEditText.text.toString().trim()
-                val productPrice = binding.productPriceEditText.text.toString().trim()
-                val productCategory = binding.productCategoryEditText.text.toString().trim()
-                val productAvailability = binding.productAvailabilityEditText.text.toString().trim()
-                val productDescription = binding.productDescriptionEditText.text.toString().trim() // Retrieve description
+                val productName = productNameEditText.text.toString().trim()
+                val productPrice = productPriceEditText.text.toString().trim()
+                val productCategory = productCategoryEditText.text.toString().trim()
+                val productAvailability = productAvailabilityEditText.text.toString().trim()
+                val productDescription = productDescriptionEditText.text.toString().trim()
 
-                if (productName.isEmpty() || productPrice.isEmpty() || productCategory.isEmpty() || productAvailability.isEmpty()) {
+                if (productName.isEmpty() || productPrice.isEmpty() || productCategory.isEmpty() || productAvailability.isEmpty() || productDescription.isEmpty()) {
                     Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this, "Uploading image...", Toast.LENGTH_SHORT).show()
-
                     uploadImageToCloudinary { imageUrl ->
-                        // Pass the imageUrl to savePostToFirestore
                         savePostToFirestore(productName, productPrice, productCategory, productAvailability, productDescription, imageUrl)
                     }
                 }
@@ -83,8 +94,12 @@ class PostActivity : AppCompatActivity() {
             }
         }
 
-        binding.imageview.setOnClickListener {
-            openImagePicker()
+        btnCancel.setOnClickListener {
+            // Pass the role back when canceling
+            val intent = Intent(this@PostActivity, HomeActivity::class.java)
+            intent.putExtra("ROLE", userRole)
+            startActivity(intent)
+            finish()
         }
     }
 
@@ -147,7 +162,14 @@ class PostActivity : AppCompatActivity() {
         }
     }
 
-    private fun savePostToFirestore(productName: String, productPrice: String, productCategory: String, productAvailability: String, productDescription: String, imageUrl: String) {
+    private fun savePostToFirestore(
+        productName: String,
+        productPrice: String,
+        productCategory: String,
+        productAvailability: String,
+        productDescription: String,
+        imageUrl: String
+    ) {
         val user = Firebase.auth.currentUser
         if (user != null) {
             val post = Post(
@@ -155,44 +177,45 @@ class PostActivity : AppCompatActivity() {
                 timestamp = System.currentTimeMillis(),
                 userId = user.uid,
                 username = user.displayName ?: "Anonymous",
-                imageUrl = imageUrl, // Ensure this is passed
+                imageUrl = imageUrl, // Make sure this is being set
                 productName = productName,
                 productPrice = productPrice,
                 productCategory = productCategory,
                 productAvailability = productAvailability,
-                productDescription = productDescription // Include description
+                productDescription = productDescription
             )
 
+            // Simplified Firestore save operation
             Firebase.firestore.collection("posts")
                 .add(post)
                 .addOnSuccessListener { documentReference ->
-                    post.postId = documentReference.id
+                    // Update the postId with the generated document ID
+                    val postId = documentReference.id
                     Firebase.firestore.collection("posts")
-                        .document(post.postId!!)
-                        .set(post)
+                        .document(postId)
+                        .update("postId", postId)
                         .addOnSuccessListener {
+                            Log.d(TAG, "Post successfully saved with ID: $postId")
                             Toast.makeText(this, "Product uploaded successfully", Toast.LENGTH_SHORT).show()
 
-                            // Pass the role back to HomeActivity to maintain seller view
                             val intent = Intent(this@PostActivity, HomeActivity::class.java)
-                            intent.putExtra("ROLE", userRole) // Pass the role back
+                            intent.putExtra("ROLE", userRole)
                             startActivity(intent)
                             finish()
                         }
                         .addOnFailureListener { e ->
                             Log.e(TAG, "Error updating postId: ${e.message}")
-                            Toast.makeText(this, "Error saving product", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Product uploaded but ID update failed", Toast.LENGTH_SHORT).show()
                         }
                 }
                 .addOnFailureListener { e ->
                     Log.e(TAG, "Error adding product: ${e.message}")
-                    Toast.makeText(this, "Error adding product", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Error adding product: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
         } else {
             Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
         }
     }
-
     companion object {
         private const val TAG = "PostActivity"
     }

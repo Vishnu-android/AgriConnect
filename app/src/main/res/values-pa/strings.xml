@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <string name="order_details_title">ਆਰਡਰ ਦੇ ਵੇਰਵੇ</string>
+        <string name="shipping_address_title">ਸ਼ਿਪਿੰਗ ਪਤਾ</string>
+        <string name="full_name_hint">ਪੂਰਾ ਨਾਮ</string>
+        <string name="phone_hint">ਫੋਨ ਨੰਬਰ</string>
+        <string name="address_hint">ਪੂਰਾ ਪਤਾ</string>
+        <string name="city_hint">ਸ਼ਹਿਰ</string>
+        <string name="state_hint">ਰਾਜ</string>
+        <string name="pincode_hint">ਪਿੰਨ ਕੋਡ</string>
+        <string name="order_notes_title">ਆਰਡਰ ਨੋਟਸ (ਵਿਕਲਪਿਕ)</string>
+        <string name="special_instructions_hint">ਡਿਲੀਵਰੀ ਲਈ ਵਿਸ਼ੇਸ਼ ਨਿਰਦੇਸ਼</string>
+
+    <string name="add_product_title">ਉਤਪਾਦ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="select_product_image">ਉਤਪਾਦ ਚਿੱਤਰ ਚੁਣੋ</string>
+    <string name="select_image_button">ਚਿੱਤਰ ਚੁਣੋ</string>
+    <string name="product_name_label">ਉਤਪਾਦ ਦਾ ਨਾਮ</string>
+    <string name="product_name_hint">ਉਤਪਾਦ ਦਾ ਨਾਮ ਦਰਜ ਕਰੋ</string>
+    <string name="product_category_label">ਉਤਪਾਦ ਸ਼੍ਰੇਣੀ</string>
+    <string name="product_category_hint">ਉਤਪਾਦ ਸ਼੍ਰੇਣੀ ਦਰਜ ਕਰੋ</string>
+    <string name="product_price_label">ਉਤਪਾਦ ਕੀਮਤ</string>
+    <string name="product_price_hint">ਉਤਪਾਦ ਕੀਮਤ ਦਰਜ ਕਰੋ</string>
+    <string name="product_availability_hint">ਉਤਪਾਦ ਉਪਲਬਧਤਾ ਦਰਜ ਕਰੋ</string>
+    <string name="product_description_hint">ਉਤਪਾਦ ਵੇਰਵਾ ਦਰਜ ਕਰੋ</string>
+    <string name="add_product_button">ਉਤਪਾਦ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="cancel_button">ਰੱਦ ਕਰੋ</string>
+
+
+        <string name="product_image_desc">ਉਤਪਾਦ ਤਸਵੀਰ</string>
+        <string name="availability_label">ਉਪਲਬਧਤਾ</string>
+
+
+        <string name="email_label">ਈਮੇਲ</string>
+        <string name="logout_icon_desc">ਲਾਗਆਉਟ ਆਈਕਨ</string>
+        <string name="products_label">ਉਤਪਾਦ</string>
+        <string name="total_sales_label">ਕੁੱਲ ਵਿਕਰੀ</string>
+        <string name="ratings_label">ਰੇਟਿੰਗ</string>
+        <string name="farm_name_label">ਫਾਰਮ ਦਾ ਨਾਮ</string>
+        <string name="location_label">ਟਿਕਾਣਾ: ਸ਼ਹਿਰ, ਰਾਜ</string>
+        <string name="contact_label">ਸੰਪਰਕ: +91 1234567890</string>
+        <string name="upi_id_label">ਯੂਪੀਆਈ ਆਈਡੀ: ਉਪਲਬਧ ਨਹੀਂ</string>
+        <string name="bank_account_label">ਬੈਂਕ ਖਾਤਾ: ਉਪਲਬਧ ਨਹੀਂ</string>
+        <string name="view_orders_button">ਆਰਡਰ ਵੇਖੋ</string>
+        <string name="edit_profile_button">ਪ੍ਰੋਫਾਈਲ ਸੰਪਾਦਿਤ ਕਰੋ</string>
+
+
+        <string name="profile_title">ਤੁਹਾਡਾ ਪ੍ਰੋਫਾਈਲ</string>
+        <string name="orders_label">ਆਰਡਰ</string>
+        <string name="volume_label">ਮਾਤਰਾ</string>
+        <string name="member_since_label">ਮੈਂਬਰ ਸ਼ੁਰੂਆਤ</string>
+        <string name="contact_info_title">ਸੰਪਰਕ ਜਾਣਕਾਰੀ</string>
+        <string name="recent_orders_title">ਤਾਜ਼ੇ ਆਰਡਰ</string>
+        <string name="view_all_orders">ਸਾਰੇ ਆਰਡਰ ਵੇਖੋ</string>
+        <string name="contact_button">ਸੰਪਰਕ ਕਰੋ</string>
+        <string name="place_order_button">ਆਰਡਰ ਦਿਓ</string>
+
+
+        <string name="sample_product_name">ਜੈਵਿਕ ਤਾਜ਼ੇ ਟਮਾਟਰ</string>
+        <string name="sample_variety">ਸਥਾਨਕ ਕਿਸਮ</string>
+        <string name="quantity_label">ਮਾਤਰਾ: 2 ਕਿਲੋ</string>
+        <string name="sample_price">₹75/ਕਿਲੋ</string>
+        <string name="remove_item_desc">ਆਈਟਮ ਹਟਾਓ</string>
+
+    <string name="follow_button_text">ਫਾਲੋ ਕਰੋ</string>
+    <string name="following_button_text">ਫਾਲੋ ਕੀਤਾ</string>
+    <string name="unfollow_button_text">ਅਨਫਾਲੋ</string>
+    <string name="search_users_hint">ਯੂਜ਼ਰਾਂ ਨੂੰ ਖੋਜੋ...</string>
+
+
+        <string name="order_summary_title">ਆਰਡਰ ਸਾਰਾਂਸ਼</string>
+        <string name="product_details">ਉਤਪਾਦ ਵੇਰਵਾ</string>
+        <string name="fresh_organic_tomatoes">ਤਾਜ਼ੇ ਜੈਵਿਕ ਟਮਾਟਰ</string>
+        <string name="category">ਸ਼੍ਰੇਣੀ</string>
+        <string name="quantity">ਮਾਤਰਾ</string>
+        <string name="quantity_example">ਮਾਤਰਾ: 5 ਕਿਲੋ</string>
+        <string name="delivery_address">ਡਿਲੀਵਰੀ ਪਤਾ</string>
+        <string name="change">ਬਦਲੋ</string>
+        <string name="customer_name_example">ਜੌਨ ਡੋ</string>
+        <string name="customer_address_example">123 ਫਾਰਮ ਰੋਡ, ਗ੍ਰੀਨ ਵਿਲੇਜ, ਆਰਗੈਨਿਕ ਸਟੇਟ, 567890</string>
+        <string name="phone_example">ਫੋਨ: +91 9876543210</string>
+        <string name="price_details">ਕੀਮਤ ਵੇਰਵਾ</string>
+        <string name="product_price">ਉਤਪਾਦ ਦੀ ਕੀਮਤ</string>
+        <string name="delivery_fee">ਡਿਲੀਵਰੀ ਫੀਸ</string>
+        <string name="total_amount">ਕੁੱਲ ਰਕਮ</string>
+        <string name="seller_information">ਵਿਕਰੇਤਾ ਜਾਣਕਾਰੀ</string>
+        <string name="farmer_name_example">ਕਿਸਾਨ ਦਾ ਨਾਮ</string>
+        <string name="farmer_location_example">ਟਿਕਾਣਾ: ਗ੍ਰੀਨ ਵਿਲੇਜ</string>
+        <string name="proceed_to_payment">ਭੁਗਤਾਨ ਕਰੋ</string>
+
+        <string name="product_details_title">ਉਤਪਾਦ ਵੇਰਵਾ</string>
+        <string name="organic_red_apples">ਜੈਵਿਕ ਲਾਲ ਸੇਬ</string>
+        <string name="category_fruits">ਸ਼੍ਰੇਣੀ: ਫਲ</string>
+        <string name="price_per_kg">₹80 ਪ੍ਰਤੀ ਕਿਲੋ</string>
+        <string name="in_stock">ਸਟਾਕ ਵਿੱਚ: 50 ਕਿਲੋ</string>
+        <string name="description">ਵੇਰਵਾ</string>
+        <string name="product_description">ਸਾਡੇ ਫਾਰਮ ਤੋਂ ਤਾਜ਼ੇ ਅਤੇ ਜੈਵਿਕ ਤਰੀਕੇ ਨਾਲ ਉਗਾਏ ਗਏ ਲਾਲ ਸੇਬ। ਕੋਈ ਕੀਟਨਾਸ਼ਕ ਵਰਤੋਂ ਨਹੀਂ। ਮਿੱਠੇ ਅਤੇ ਰਸਦਾਰ, ਕੱਚੇ ਖਾਣ ਜਾਂ ਪਕਾਉਣ ਲਈ ਬਿਲਕੁਲ ਸਹੀ।</string>
+        <string name="farmer_details">ਕਿਸਾਨ ਦਾ ਵੇਰਵਾ</string>
+        <string name="farmer_name">ਜੌਨ ਡੋ</string>
+        <string name="location">ਟਿਕਾਣਾ: ਨਾਸਿਕ, ਮਹਾਰਾਸ਼ਟਰ</string>
+        <string name="harvest_date">ਫਸਲ ਦੀ ਤਾਰੀਖ: 15 ਮਾਰਚ 2025</string>
+        <string name="farming_method">ਖੇਤੀ ਦਾ ਤਰੀਕਾ: ਜੈਵਿਕ</string>
+        <string name="delivery_options">ਡਿਲੀਵਰੀ: 50 ਕਿਲੋਮੀਟਰ ਦੇ ਦਾਇਰੇ ਵਿੱਚ ਉਪਲਬਧ</string>
+        <string name="quality_assurance">ਕੁਆਲਟੀ ਭਰੋਸਾ</string>
+        <string name="organic">ਜੈਵਿਕ</string>
+        <string name="fresh">ਤਾਜ਼ਾ</string>
+        <string name="local">ਸਥਾਨਕ</string>
+        <string name="contact_farmer">ਕਿਸਾਨ ਨਾਲ ਸੰਪਰਕ ਕਰੋ</string>
+        <string name="call">ਕਾਲ</string>
+        <string name="message">ਸੁਨੇਹਾ</string>
+        <string name="email">ਈਮੇਲ</string>
+        <string name="contact">ਸੰਪਰਕ</string>
+        <string name="buy_now">ਹੁਣੇ ਖਰੀਦੋ</string>
+
+
+        <string name="product_category_vegetables">ਸਬਜ਼ੀਆਂ</string>
+        <string name="product_name_tomatoes">ਤਾਜ਼ੇ ਜੈਵਿਕ ਟਮਾਟਰ</string>
+
+        <string name="add_to_cart">ਕਾਰਟ ਵਿੱਚ ਜੋੜੋ</string>
+
+
+        <string name="menu_home">ਘਰ</string>
+        <string name="menu_add">ਜੋੜੋ</string>
+        <string name="menu_search">ਖੋਜ</string>
+        <string name="menu_profile">ਪ੍ਰੋਫਾਈਲ</string>
+    <string name="menu_my_posts">ਮੇਰੀਆਂ ਪੋਸਟਾਂ</string>
+    <string name="menu_add_product">ਉਤਪਾਦ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="menu_cart">ਮੇਰੀ ਗੱਡੀ</string>
+    <string name="menu_my_order">My Order</string>
+
+
+        <string name="seller_name">ਰਾਜੇਸ਼ ਪਟੇਲ</string>
+        <string name="seller_farm_name">ਗ੍ਰੀਨ ਵੈਲੀ ਆਰਗੈਨਿਕ ਫਾਰਮ</string>
+
+        <!-- Contact Information -->
+        <string name="additional_information">ਸੰਪਰਕ ਜਾਣਕਾਰੀ</string>
+        <string name="seller_phone">+91 98765 43210</string>
+        <string name="seller_email">greenvalley@example.com</string>
+        <string name="seller_upiId">rajesh.patel@upi</string>
+        <string name="seller_account_number">AC1234567890 (ਸਟੇਟ ਬੈਂਕ)</string>
+
+        <!-- Farm Information -->
+    <string name="order_id_format">ऑर्डर आयडी: %s</string>
+    <string name="price_format">ਕੀਮਤ: ₹%.2f</string>  <!-- Example: ਕੀਮਤ: ₹100.00 -->
+    <string name="quantity_format">ਮਾਤਰਾ: %d</string>  <!-- Example: ਮਾਤਰਾ: 2 -->
+        <string name="about_farm">ਸਾਡੇ ਫਾਰਮ ਬਾਰੇ</string>
+        <string name="farm_description">ਅਸੀਂ ਇੱਕ ਪਰਿਵਾਰਕ ਆਰਗੈਨਿਕ ਫਾਰਮ ਹਾਂ ਜੋ ਮੌਸਮੀ ਸਬਜ਼ੀਆਂ ਅਤੇ ਫਲਾਂ ਵਿੱਚ ਮਾਹਰ ਹੈ। 20 ਸਾਲਾਂ ਤੋਂ ਵੱਧ ਦੇ ਤਜਰਬੇ ਨਾਲ, ਅਸੀਂ ਆਪਣੇ ਗਾਹਕਾਂ ਨੂੰ ਸਿੱਧੇ ਤਾਜ਼ੇ, ਰਸਾਇਣ-ਮੁਕਤ ਉਤਪਾਦ ਪਹੁੰਚਾਉਣ ਲਈ ਟਿਕਾਊ ਖੇਤੀ ਵਿਧੀਆਂ ਦਾ ਅਭਿਆਸ ਕਰਦੇ ਹਾਂ। ਸਾਡਾ ਫਾਰਮ ਮਹਾਰਾਸ਼ਟਰ ਦੀਆਂ ਉਪਜਾਊ ਭੂਮੀਆਂ ਵਿੱਚ ਸਥਿਤ ਹੈ, ਜਿੱਥੇ ਅਸੀਂ ਸਾਰਾ ਸਾਲ 50 ਤੋਂ ਵੱਧ ਕਿਸਮਾਂ ਦੀਆਂ ਫਸਲਾਂ ਉਗਾਉਂਦੇ ਹਾਂ।</string>
+    <string name="edit_profile">ਪ੍ਰੋਫਾਈਲ ਸੰਪਾਦਿਤ ਕਰੋ</string>
+    <string name="logout">ਲੌਗਆਉਟ</string>
+    <string name="add_product">ਉਤਪਾਦ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="add_video">ਵੀਡੀਓ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="no_posts_found">ਤੁਸੀਂ ਅਜੇ ਤੱਕ ਕੁਝ ਵੀ ਪੋਸਟ ਨਹੀਂ ਕੀਤਾ</string>
+    <string name="loading_posts">ਤੁਹਾਡੀਆਂ ਪੋਸਟਾਂ ਲੋਡ ਹੋ ਰਹੀਆਂ ਹਨ...</string>
+    <string name="No_orders_found">ਕੋਈ ਆਰਡਰ ਨਹੀਂ ਮਿਲਿਆ</string>
+    <string name="No_products_uploaded">ਹਾਲੇ ਤੱਕ ਕੋਈ ਉਤਪਾਦ ਅਪਲੋਡ ਨਹੀਂ ਕੀਤਾ ਗਿਆ</string>
+</resources>

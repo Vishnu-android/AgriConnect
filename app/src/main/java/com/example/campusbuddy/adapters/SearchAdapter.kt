@@ -1,10 +1,10 @@
 package com.example.campusbuddy.adapters
 
-import User
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.campusbuddy.Models.User
 
 
 import com.example.campusbuddy.databinding.SearchRvBinding

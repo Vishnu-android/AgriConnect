@@ -1,7 +1,7 @@
 package com.example.campusbuddy.Fragment
 
 
-import User
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.campusbuddy.Models.User
 
 import com.example.campusbuddy.SignUpActivity
 import com.example.campusbuddy.databinding.FragmentProfileBinding
@@ -34,14 +35,14 @@ class ProfileFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
 
         // Handle Edit Profile Button Click
-        binding.editProfileButton.setOnClickListener {
-            val intent = Intent(activity, SignUpActivity::class.java)
-            intent.putExtra("MODE", SignUpActivity.MODE_EDIT_PROFILE)
-            startActivity(intent)
-        }
+//        binding.btnEditProfile.setOnClickListener {
+//            val intent = Intent(activity, SignUpActivity::class.java)
+//            intent.putExtra("MODE", SignUpActivity.MODE_EDIT_PROFILE)
+//            startActivity(intent)
+//        }
 
         // Handle Logout Button Click
-        binding.logoutBtn.setOnClickListener {
+        binding.btnLogout.setOnClickListener {
             auth.signOut()
             val intent = Intent(activity, SignUpActivity::class.java)
             startActivity(intent)
@@ -69,17 +70,17 @@ class ProfileFragment : Fragment() {
                         val user = documentSnapshot.toObject<User>()
                         if (user != null) {
                             // Set user's details
-                            binding.farmName.text = user.name ?: "N/A"
-                            binding.email.text = user.email ?: "N/A"
-                            binding.location.text = "Location: ${user.location ?: "N/A"}"
-                            binding.contactInfo.text = "Contact: ${user.contact ?: "N/A"}"
+                            binding.sellerName.text = user.name ?: "N/A"
+                            binding.sellerEmail.text = user.email ?: "N/A"
+//                            binding.location.text = "Location: ${user.location ?: "N/A"}"
+                            binding.sellerPhone.text = "Contact: ${user.contact ?: "N/A"}"
                             binding.upiId.text = "UPI ID: ${user.upiId ?: "N/A"}"
                             binding.bankAccountNumber.text = "Bank Account: ${user.bankAccountNumber ?: "N/A"}"
 
-                            // Set user's stats
-                            binding.productsCount.text = user.productsUploaded.toString()
-                            binding.salesCount.text = "₹${user.totalSales}"
-                            binding.ratingsCount.text = user.ratings.toString()
+//                            // Set user's stats
+//                            binding.productsCount.text = user.productsUploaded.toString()
+//                            binding.salesCount.text = "₹${user.totalSales}"
+//                            binding.ratingsCount.text = user.ratings.toString()
 
                             // Display payment details for Sellers
                             if (user.role == "Seller") {

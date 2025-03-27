@@ -77,6 +77,9 @@ class LoginActivity : AppCompatActivity() {
                     }
             }
         }
+        binding.signUpLink.setOnClickListener {
+            startActivity(Intent(this, SignUpActivity::class.java))
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

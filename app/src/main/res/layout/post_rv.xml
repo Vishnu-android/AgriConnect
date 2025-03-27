@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Product Image with Add Button -->
+        <!-- Product Image -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="180dp">
@@ -39,27 +39,6 @@
                 android:paddingTop="4dp"
                 android:paddingBottom="4dp"
                 android:layout_margin="12dp" />
-
-            <!-- Text-based Add Button Over Image -->
-            <Button
-                android:id="@+id/buttonAddCart"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_margin="12dp"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:text="Add"
-                android:textAllCaps="false"
-                android:textSize="14sp"
-                android:textColor="@color/white"
-                android:backgroundTint="@color/primary"
-                app:cornerRadius="8dp" />
         </RelativeLayout>
 
         <!-- Product Details Container -->
@@ -138,7 +117,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
 
                 <ImageView
                     android:id="@+id/imageFarmerAvatar"
@@ -175,7 +155,17 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Removed the bottom "Add to Cart" button as requested -->
+            <!-- Add to Cart Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonAddCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add to Cart"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/primary"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/baseline_shopping_cart_24"
+                app:iconGravity="textStart" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
