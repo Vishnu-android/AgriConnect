@@ -1,6 +1,7 @@
 package com.example.campusbuddy.adapters
 
 
+import com.example.campusbuddy.Models.Post
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -14,7 +15,7 @@ import com.example.campusbuddy.Models.CartItem
 import com.example.campusbuddy.R
 import com.example.campusbuddy.databinding.PostRvBinding
 import com.example.campusbuddy.utils.USER_NODE
-import com.example.campusbuddy.Models.Post
+
 import com.example.campusbuddy.Models.User
 import com.example.campusbuddy.PostDetailActivity
 import com.example.campusbuddy.viewmodels.CartViewModel

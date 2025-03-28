@@ -1,5 +1,6 @@
 package com.example.campusbuddy.Fragment
 
+
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -13,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.campusbuddy.Models.Post
+
 import com.example.campusbuddy.R
 import com.example.campusbuddy.adapters.BannerAdapter
 import com.example.campusbuddy.adapters.PostAdapter

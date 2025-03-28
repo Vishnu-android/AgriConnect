@@ -20,4 +20,9 @@
     <color name="medium_gray">#888888</color>
     <color name="light_gray">#DDDDDD</color>
     <color name="accent_orange">#FF6D00</color>
+    <color name="green">#4CAF50</color>
+    <color name="orange">#FF9800</color>
+    <color name="red">#F44336</color>
+    <color name="blue">#2196F3</color>
+    <color name="gray">#9E9E9E</color>
 </resources>

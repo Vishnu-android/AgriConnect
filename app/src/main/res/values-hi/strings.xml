@@ -152,4 +152,6 @@
     <string name="add_video">वीडियो जोड़ें</string>
     <string name="no_posts_found">आपने अभी तक कुछ भी पोस्ट नहीं किया है</string>
     <string name="loading_posts">आपकी पोस्ट लोड हो रही हैं...</string>
+    <string name="no_archived_posts">No products uploaded yet</string>
+    <string name="enter_new_price">नई कीमत दर्ज करें</string>
 </resources>

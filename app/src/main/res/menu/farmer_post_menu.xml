@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_edit_availability"
+        android:title="Update Availability"
+        android:icon="@drawable/ic_home_black_24dp"/>
+
+    <item
+        android:id="@+id/menu_edit_price"
+        android:title="Change Price"
+        android:icon="@drawable/ic_home_black_24dp"/>
+
+    <item
+        android:id="@+id/menu_archive"
+        android:title="Archive"
+        android:icon="@drawable/ic_home_black_24dp"/>
+</menu>

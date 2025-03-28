@@ -161,4 +161,6 @@
    <string name="loading_posts">Loading your posts...</string>
    <string name="No_orders_found">No orders found</string>
    <string name="No_products_uploaded">No products uploaded yet</string>
+   <string name="no_archived_posts">No products uploaded yet</string>
+   <string name="enter_new_price">Enter new price</string>
 </resources>
