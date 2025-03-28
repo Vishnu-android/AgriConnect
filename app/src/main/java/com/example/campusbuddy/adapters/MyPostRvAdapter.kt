@@ -56,7 +56,25 @@ class MyPostRvAdapter(
         holder.btnOptions.setOnClickListener { view ->
             showOptionsMenu(view, post)
         }
+        // Display price with unit if applicable
+        val priceText = if (post.pricePerUnit) {
+            "${post.productPrice} ₹/${post.unit}"
+        } else {
+            "${post.productPrice} ₹ (total)"
+        }
+
+        holder.productPrice.text = priceText
+
+        // Add quantity display (optional)
+        holder.productCategory.text = buildString {
+            append(post.productCategory ?: "Uncategorized")
+            append(" • ")
+            append("${post.quantity} ${post.unit}")
+        }
     }
+
+    //new
+
 
     private fun updateAvailabilityUI(textView: TextView, availability: String?) {
         val (colorRes, iconRes) = when (availability) {

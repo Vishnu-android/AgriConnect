@@ -47,7 +47,20 @@ class PostAdapter(
 
         Log.d("PostAdapter", "Post image URL: ${post.imageUrl}")
 
+// Update price display to include unit if price is per unit
+        val priceText = if (post.pricePerUnit) {
+            "₹${post.productPrice}/${post.unit}"
+        } else {
+            "₹${post.productPrice} (total)"
+        }
+        holder.binding.textProductPrice.text = priceText
 
+        // Add quantity information to description or create new TextView
+        val descriptionText = buildString {
+            append(post.productDescription ?: "No description")
+            append("\n\nQuantity: ${post.quantity} ${post.unit}")
+        }
+        holder.binding.textProductDescription.text = descriptionText
         // Highlight posts from followed users
         if (followedUsers.contains(post.userId)) {
             holder.binding.cardView.setCardBackgroundColor(Color.LTGRAY)
@@ -92,6 +105,15 @@ class PostAdapter(
         holder.binding.textProductAvailability.text = "Availability: ${post.productAvailability ?: "N/A"}"
         holder.binding.textProductDescription.text = "Description: ${post.productDescription ?: "N/A"}"
 
+        holder.binding.textProductQuantity.text =
+            "Available: ${post.quantity} ${post.unit}"
+
+        // Set availability (you can add color coding here)
+        holder.binding.textProductAvailability.text = post.productAvailability ?: "N/A"
+
+        // Set description (without quantity info since we have a dedicated field now)
+        holder.binding.textProductDescription.text = post.productDescription ?: "No description"
+
         // Handle item click to open PostDetailActivity
         holder.itemView.setOnClickListener {
             val intent = Intent(context, PostDetailActivity::class.java)
@@ -106,7 +128,10 @@ class PostAdapter(
                     productId = post.postId ?: "",
                     productName = post.productName ?: "N/A",
                     productPrice = post.productPrice ?: "N/A",
-                    productImageUrl = post.imageUrl
+                    productImageUrl = post.imageUrl,
+                    quantity = post.quantity,          // Add quantity from Post
+                    unit = post.unit,                 // Add unit from Post
+                    pricePerUnit = post.pricePerUnit  // Add pricePerUnit from Post
                 )
             )
             Toast.makeText(context, "${post.productName ?: "Product"} added to cart!", Toast.LENGTH_SHORT).show()

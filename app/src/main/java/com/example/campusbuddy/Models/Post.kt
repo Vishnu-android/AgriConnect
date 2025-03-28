@@ -4,6 +4,16 @@ import com.google.firebase.firestore.PropertyName
 import java.io.Serializable
 
 data class Post(
+
+    @get:PropertyName("productQuantity") @set:PropertyName("productQuantity")
+    var quantity: Double = 0.0,
+
+    @get:PropertyName("productUnit") @set:PropertyName("productUnit")
+    var unit: String = "kg",  // Default unit
+
+    @get:PropertyName("pricePerUnit") @set:PropertyName("pricePerUnit")
+    var pricePerUnit: Boolean = true,
+
     @get:PropertyName("postId") @set:PropertyName("postId")
     var postId: String? = null,
 
@@ -42,12 +52,22 @@ data class Post(
 
     @get:PropertyName("priceHistory") @set:PropertyName("priceHistory")
     var priceHistory: List<Map<String, Any>> = emptyList()
+
+
 ) : Serializable {
     companion object {
         const val AVAIL_IN_STOCK = "In Stock"
         const val AVAIL_LOW_STOCK = "Low Stock"
         const val AVAIL_OUT_OF_STOCK = "Out of Stock"
         const val AVAIL_COMING_SOON = "Coming Soon"
+
+        const val UNIT_KG = "kg"
+        const val UNIT_GRAM = "g"
+        const val UNIT_LB = "lb"
+        const val UNIT_PIECE = "piece"
+        const val UNIT_LITER = "liter"
+        const val UNIT_DOZEN = "dozen"
+        const val UNIT_BAG = "bag"
     }
 
     constructor() : this(timestamp = System.currentTimeMillis())

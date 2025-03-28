@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.campusbuddy.Models.CartItem
+import com.example.campusbuddy.Models.Post
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -23,16 +24,38 @@ class CartViewModel(application: Application) : AndroidViewModel(application) {
 
     fun addItemToCart(cartItem: CartItem) {
         val currentCart = _cartItems.value ?: mutableListOf()
-        val existingItem = currentCart.find { it.productId == cartItem.productId && cartItem.productId != null }
+
+        // Check if item with same ID and unit already exists
+        val existingItem = currentCart.find {
+            it.productId == cartItem.productId &&
+                    it.unit == cartItem.unit
+        }
 
         if (existingItem != null) {
+            // Update quantity if item exists
             existingItem.quantity += cartItem.quantity
+            Log.d("CartViewModel", "Updated quantity for ${cartItem.productName}. New quantity: ${existingItem.quantity}")
         } else {
+            // Add new item if it doesn't exist
             currentCart.add(cartItem)
+            Log.d("CartViewModel", "Added new item to cart: ${cartItem.productName}")
         }
 
         _cartItems.postValue(currentCart)
         saveCartItems(currentCart)
+    }
+
+    fun addPostToCart(post: Post, customQuantity: Double? = null) {
+        val cartItem = CartItem(
+            productId = post.postId ?: generateUniqueId(),
+            productName = post.productName ?: "Unnamed Product",
+            productPrice = post.productPrice ?: "0",
+            productImageUrl = post.imageUrl,
+            quantity = customQuantity ?: post.quantity,
+            unit = post.unit,
+            pricePerUnit = post.pricePerUnit
+        )
+        addItemToCart(cartItem)
     }
 
     fun removeFromCart(cartItem: CartItem) {
@@ -40,9 +63,10 @@ class CartViewModel(application: Application) : AndroidViewModel(application) {
         currentCart.remove(cartItem)
         _cartItems.postValue(currentCart)
         saveCartItems(currentCart)
+        Log.d("CartViewModel", "Removed item from cart: ${cartItem.productName}")
     }
 
-    fun updateProductQuantity(productId: String, newQuantity: Int) {
+    fun updateProductQuantity(productId: String, newQuantity: Double) {
         val currentCart = _cartItems.value ?: mutableListOf()
         val cartItem = currentCart.find { it.productId == productId }
 
@@ -50,39 +74,61 @@ class CartViewModel(application: Application) : AndroidViewModel(application) {
             cartItem.quantity = newQuantity
             if (newQuantity <= 0) {
                 currentCart.remove(cartItem)
+                Log.d("CartViewModel", "Removed item due to zero quantity: ${cartItem.productName}")
             }
             _cartItems.postValue(currentCart)
             saveCartItems(currentCart)
+            Log.d("CartViewModel", "Updated quantity for $productId to $newQuantity")
         }
     }
 
     fun clearCart() {
         _cartItems.postValue(mutableListOf())
         saveCartItems(mutableListOf())
+        Log.d("CartViewModel", "Cart cleared")
+    }
+
+    fun getCartTotal(): Double {
+        return _cartItems.value?.sumOf { item ->
+            val price = item.productPrice.toDoubleOrNull() ?: 0.0
+            if (item.pricePerUnit) {
+                price * item.quantity
+            } else {
+                price
+            }
+        } ?: 0.0
+    }
+
+    fun getFormattedCartTotal(): String {
+        return "₹%.2f".format(getCartTotal())
     }
 
     private fun saveCartItems(cartItems: List<CartItem>) {
         val json = gson.toJson(cartItems)
         sharedPreferences.edit().putString("CART_ITEMS", json).apply()
-        Log.d("CartViewModel", "Cart items saved: $json")
+        Log.d("CartViewModel", "Cart items saved: ${cartItems.size} items")
     }
 
     private fun loadCartItems(): MutableList<CartItem> {
-        val json = sharedPreferences.getString("CART_ITEMS", null)
-        return if (!json.isNullOrEmpty()) {
-            try {
-                Log.d("CartViewModel", "JSON from SharedPreferences: $json")
+        return try {
+            val json = sharedPreferences.getString("CART_ITEMS", null)
+            if (!json.isNullOrEmpty()) {
                 val type = object : TypeToken<MutableList<CartItem>>() {}.type
-                val items: MutableList<CartItem> = gson.fromJson(json, type) // Explicitly specify the type
-                Log.d("CartViewModel", "Cart items loaded: ${items.size} items")
-                items
-            } catch (e: Exception) {
-                Log.e("CartViewModel", "Error loading cart items: ${e.message}", e)
+                gson.fromJson(json, type) ?: mutableListOf()
+            } else {
                 mutableListOf()
             }
-        } else {
-            Log.d("CartViewModel", "No cart items found in SharedPreferences")
+        } catch (e: Exception) {
+            Log.e("CartViewModel", "Error loading cart items", e)
             mutableListOf()
         }
+    }
+
+    private fun generateUniqueId(): String {
+        return "cart_${System.currentTimeMillis()}"
+    }
+
+    companion object {
+        private const val TAG = "CartViewModel"
     }
 }

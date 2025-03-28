@@ -155,4 +155,8 @@
     <string name="No_products_uploaded">अजून कोणतेही उत्पादन अपलोड केलेले नाही</string>
     <string name="no_archived_posts">No products uploaded yet</string>
     <string name="enter_new_price">नवीन किंमत प्रविष्ट करा</string>
+    <string name="hint_quantity">प्रमाण</string>
+    <string name="hint_select_unit">एकक निवडा</string>
+    <string name="label_price_per_unit">प्रति एकक किंमत</string>
+    <string name="error_select_unit">कृपया एकक निवडा</string>
 </resources>
