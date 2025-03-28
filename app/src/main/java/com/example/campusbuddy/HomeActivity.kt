@@ -2,13 +2,14 @@ package com.example.campusbuddy
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.campusbuddy.Fragment.HomeFragment
 import com.example.campusbuddy.databinding.ActivityHomeBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -29,6 +30,12 @@ class HomeActivity : AppCompatActivity() {
 
         // Initialize navigation
         setupNavigation()
+
+        // Setup button to navigate to DashboardActivity
+        binding.btnGoToDashboard.setOnClickListener {
+            startActivity(Intent(this, DashboardActivity::class.java))
+        }
+        binding.btnGoToDashboard.visibility = if (currentRole.lowercase() == "seller") View.VISIBLE else View.GONE
     }
 
     private fun getDefaultRole(): String {
