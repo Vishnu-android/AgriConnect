@@ -10,9 +10,7 @@ interface ApiService {
     suspend fun getCommodityPrices(
         @Query("api-key") apiKey: String = "579b464db66ec23bdd0000019c90c64b20094d2776293735a90420dd",
         @Query("format") format: String = "json",
-        @Query("filters[state.keyword]") state: String = "Gujarat",
-        @Query("filters[district]") district: String = "Amreli",
-        @Query("filters[market]") market: String = "Damnagar"
+        @Query("filters[state.keyword]") state: String = "Bihar"
     ): Response<ApiResponse>
 }
 
