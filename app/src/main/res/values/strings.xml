@@ -16,7 +16,7 @@
     <string name="pincode_hint">PIN Code</string>
     <string name="order_notes_title">Order Notes (Optional)</string>
     <string name="special_instructions_hint">Special instructions for delivery</string>
-
+    <string name="Today_Prices">₹ Price Today</string>
     <string name="add_product_title">Add Product</string>
     <string name="select_product_image">Select Product Image</string>
     <string name="select_image_button">Select Image</string>
