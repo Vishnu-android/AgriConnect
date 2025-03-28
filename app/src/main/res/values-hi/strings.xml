@@ -154,4 +154,8 @@
     <string name="loading_posts">आपकी पोस्ट लोड हो रही हैं...</string>
     <string name="no_archived_posts">No products uploaded yet</string>
     <string name="enter_new_price">नई कीमत दर्ज करें</string>
+    <string name="hint_quantity">मात्रा</string>
+    <string name="hint_select_unit">इकाई चुनें</string>
+    <string name="label_price_per_unit">कीमत प्रति इकाई</string>
+    <string name="error_select_unit">कृपया एक इकाई चुनें</string>
 </resources>

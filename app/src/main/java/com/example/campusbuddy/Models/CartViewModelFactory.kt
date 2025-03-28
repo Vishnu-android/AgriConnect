@@ -9,6 +9,7 @@ import com.example.campusbuddy.viewmodels.CartViewModel
 
 class CartViewModelFactory(private val application: Application) : ViewModelProvider.Factory {
 
+
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(CartViewModel::class.java)) {
             // Create and return an instance of CartViewModel
@@ -16,4 +17,5 @@ class CartViewModelFactory(private val application: Application) : ViewModelProv
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
+
 }

@@ -163,4 +163,9 @@
    <string name="No_products_uploaded">No products uploaded yet</string>
    <string name="no_archived_posts">No products uploaded yet</string>
    <string name="enter_new_price">Enter new price</string>
+
+   <string name="hint_quantity">Quantity</string>
+   <string name="hint_select_unit">Select Unit</string>
+   <string name="label_price_per_unit">Price is per unit</string>
+   <string name="error_select_unit">Please select a unit</string>
 </resources>

@@ -5,5 +5,7 @@ data class CartItem(
     val productName: String,
     val productPrice: String,
     val productImageUrl: String?,
-    var quantity: Int = 1
+    var quantity: Double,      // Changed from Int to Double if needed
+    val unit: String,          // New field
+    val pricePerUnit: Boolean
 )
