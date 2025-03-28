@@ -150,7 +150,11 @@
     <string name="add_product">ਉਤਪਾਦ ਸ਼ਾਮਲ ਕਰੋ</string>
     <string name="add_video">ਵੀਡੀਓ ਸ਼ਾਮਲ ਕਰੋ</string>
     <string name="no_posts_found">ਤੁਸੀਂ ਅਜੇ ਤੱਕ ਕੁਝ ਵੀ ਪੋਸਟ ਨਹੀਂ ਕੀਤਾ</string>
+
     <string name="loading_posts">ਤੁਹਾਡੀਆਂ ਪੋਸਟਾਂ ਲੋਡ ਹੋ ਰਹੀਆਂ ਹਨ...</string>
     <string name="No_orders_found">ਕੋਈ ਆਰਡਰ ਨਹੀਂ ਮਿਲਿਆ</string>
     <string name="No_products_uploaded">ਹਾਲੇ ਤੱਕ ਕੋਈ ਉਤਪਾਦ ਅਪਲੋਡ ਨਹੀਂ ਕੀਤਾ ਗਿਆ</string>
+    <string name="no_archived_posts">No products uploaded yet</string>
+    <string name="enter_new_price">ਨਵਾਂ ਦਾਮ ਦਰਜ ਕਰੋ</string>
+
 </resources>

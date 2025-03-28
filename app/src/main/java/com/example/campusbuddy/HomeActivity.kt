@@ -87,6 +87,7 @@ class HomeActivity : AppCompatActivity() {
             }
             true
         }
+
     }
 
     fun refreshHomeFragment() {

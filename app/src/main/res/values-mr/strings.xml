@@ -153,4 +153,6 @@
     <string name="loading_posts">तुमच्या पोस्ट लोड होत आहेत...</string>
     <string name="No_orders_found">ऑर्डर सापडले नाही</string>
     <string name="No_products_uploaded">अजून कोणतेही उत्पादन अपलोड केलेले नाही</string>
+    <string name="no_archived_posts">No products uploaded yet</string>
+    <string name="enter_new_price">नवीन किंमत प्रविष्ट करा</string>
 </resources>

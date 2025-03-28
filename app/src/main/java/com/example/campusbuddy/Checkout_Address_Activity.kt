@@ -1,5 +1,6 @@
 package com.example.campusbuddy
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.campusbuddy.Models.Address
 import com.example.campusbuddy.Models.Post
+
 import com.example.campusbuddy.Models.User
 import com.example.campusbuddy.databinding.ActivityCheckoutAddressBinding
 import com.example.campusbuddy.utils.USER_NODE
